@@ -1,141 +1,161 @@
-/* Synexia Digital Attendance Assistant - Premium Styling */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+/* Enterprise Attendance OS - Modern Clean Styling */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 :root {
-  --primary-navy: #0f172a;
-  --synexia-maroon: #7e1236;
-  --synexia-maroon-light: #9e1b45;
-  --accent-cyan: #06b6d4;
+  --bg-primary: #0a0e17;
+  --bg-surface: #101726;
+  --bg-card: #141d2f;
+  --border-subtle: #1e293b;
+  --border-focus: #3b82f6;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent-blue: #3b82f6;
   --accent-emerald: #10b981;
   --accent-amber: #f59e0b;
   --accent-rose: #f43f5e;
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #0b0f19;
-  color: #f1f5f9;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
   min-height: 100vh;
-  overflow-x: hidden;
+  letter-spacing: -0.01em;
 }
 
-.font-mono-nums {
+.font-mono {
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* Glassmorphism surfaces */
-.glass-panel {
-  background: rgba(17, 24, 39, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* Subtle surfaces */
+.card-surface {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.875rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.glass-card {
-  background: rgba(23, 32, 54, 0.65);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+.card-surface:hover {
+  border-color: #334155;
 }
 
-.glass-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.16);
-  box-shadow: 0 14px 30px -10px rgba(0, 0, 0, 0.5);
+/* Status Highlighting */
+.status-shortage {
+  border-color: rgba(244, 63, 94, 0.45) !important;
+  background: linear-gradient(180deg, rgba(244, 63, 94, 0.05) 0%, rgba(16, 23, 38, 0.8) 100%) !important;
 }
 
-/* Shortage Critical Alert pulse */
-.shortage-border {
-  border: 1px solid rgba(244, 63, 94, 0.6) !important;
-  box-shadow: 0 0 20px -3px rgba(244, 63, 94, 0.25) !important;
+.status-shortage-badge {
+  background: rgba(244, 63, 94, 0.12);
+  color: #fb7185;
+  border: 1px solid rgba(244, 63, 94, 0.3);
 }
 
-.safe-border {
-  border: 1px solid rgba(16, 185, 129, 0.35) !important;
+.status-safe-badge {
+  background: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
-.warning-border {
-  border: 1px solid rgba(245, 158, 11, 0.4) !important;
+.status-warning-badge {
+  background: rgba(245, 158, 11, 0.12);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
-@keyframes pulse-ring {
-  0% { transform: scale(0.95); opacity: 0.8; }
-  50% { transform: scale(1.05); opacity: 1; }
-  100% { transform: scale(0.95); opacity: 0.8; }
+/* Navigation tabs */
+.nav-tab-active {
+  background-color: #1e293b;
+  color: #ffffff;
+  font-weight: 600;
 }
 
-.pulse-badge {
-  animation: pulse-ring 2.2s infinite ease-in-out;
+.nav-tab-inactive {
+  color: #94a3b8;
+}
+.nav-tab-inactive:hover {
+  color: #ffffff;
+  background-color: rgba(30, 41, 59, 0.5);
 }
 
-/* Custom Scrollbars */
+/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0b0f19;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #273449;
-  border-radius: 4px;
+  background: #334155;
+  border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3b4d66;
+  background: #475569;
 }
 
-/* Synexia Brand Gradients */
-.gradient-synexia {
-  background: linear-gradient(135deg, #7e1236 0%, #1e293b 60%, #0f172a 100%);
+/* Table styles */
+.data-table th {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #1e293b;
 }
 
-.gradient-text-synexia {
-  background: linear-gradient(135deg, #fb7185 0%, #38bdf8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.data-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #141e30;
+  font-size: 0.84rem;
 }
 
-.gradient-accent {
-  background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #3b82f6 100%);
+.data-table tr:hover td {
+  background-color: rgba(30, 41, 59, 0.35);
 }
 
-/* Circular Gauge Animation */
-.gauge-circle {
-  transition: stroke-dashoffset 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%;
+/* Clean Form inputs */
+.form-input {
+  background-color: #0b111e;
+  border: 1px solid #1e293b;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  color: #f8fafc;
+  font-size: 0.85rem;
+  transition: border-color 0.15s ease;
 }
 
-/* Floating AI Chat button pulse */
-@keyframes float-subtle {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
+.form-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15);
 }
 
-.floating-bot {
-  animation: float-subtle 3.5s infinite ease-in-out;
-}
-
-/* Print view styling for formal university submission */
+/* Print layout */
 @media print {
   body {
     background: #ffffff !important;
-    color: #000000 !important;
+    color: #0f172a !important;
   }
   .no-print {
     display: none !important;
   }
-  .print-only {
-    display: block !important;
-  }
-  .glass-card, .glass-panel {
+  .card-surface {
     background: #ffffff !important;
-    border: 1px solid #cccccc !important;
-    color: #000000 !important;
-    box-shadow: none !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #0f172a !important;
   }
-  .text-white, .text-slate-100, .text-slate-200, .text-slate-300, .text-slate-400 {
-    color: #111827 !important;
+  .status-shortage {
+    border-color: #ef4444 !important;
+    background: transparent !important;
+  }
+  .data-table th {
+    color: #475569 !important;
+    border-color: #cbd5e1 !important;
+  }
+  .data-table td {
+    color: #0f172a !important;
+    border-color: #e2e8f0 !important;
   }
 }
