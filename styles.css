@@ -1,0 +1,141 @@
+/* Synexia Digital Attendance Assistant - Premium Styling */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --primary-navy: #0f172a;
+  --synexia-maroon: #7e1236;
+  --synexia-maroon-light: #9e1b45;
+  --accent-cyan: #06b6d4;
+  --accent-emerald: #10b981;
+  --accent-amber: #f59e0b;
+  --accent-rose: #f43f5e;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #0b0f19;
+  color: #f1f5f9;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.font-mono-nums {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Glassmorphism surfaces */
+.glass-panel {
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(23, 32, 54, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 14px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* Shortage Critical Alert pulse */
+.shortage-border {
+  border: 1px solid rgba(244, 63, 94, 0.6) !important;
+  box-shadow: 0 0 20px -3px rgba(244, 63, 94, 0.25) !important;
+}
+
+.safe-border {
+  border: 1px solid rgba(16, 185, 129, 0.35) !important;
+}
+
+.warning-border {
+  border: 1px solid rgba(245, 158, 11, 0.4) !important;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.pulse-badge {
+  animation: pulse-ring 2.2s infinite ease-in-out;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0f19;
+}
+::-webkit-scrollbar-thumb {
+  background: #273449;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b4d66;
+}
+
+/* Synexia Brand Gradients */
+.gradient-synexia {
+  background: linear-gradient(135deg, #7e1236 0%, #1e293b 60%, #0f172a 100%);
+}
+
+.gradient-text-synexia {
+  background: linear-gradient(135deg, #fb7185 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #3b82f6 100%);
+}
+
+/* Circular Gauge Animation */
+.gauge-circle {
+  transition: stroke-dashoffset 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+/* Floating AI Chat button pulse */
+@keyframes float-subtle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+.floating-bot {
+  animation: float-subtle 3.5s infinite ease-in-out;
+}
+
+/* Print view styling for formal university submission */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .glass-card, .glass-panel {
+    background: #ffffff !important;
+    border: 1px solid #cccccc !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+  }
+  .text-white, .text-slate-100, .text-slate-200, .text-slate-300, .text-slate-400 {
+    color: #111827 !important;
+  }
+}
